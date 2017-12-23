@@ -1,0 +1,181 @@
+{include="head.html"}
+<div id="bd">
+  <div id="ban-in" style="background-image:url({$GLOBALS['TURL']}images/wbm.jpg)">
+    <div class="miaoshu"><div class="name"></div></div>
+    <div class="ban-bg"></div>
+  </div>
+  <div class="row4 fix">
+        <div class="wp">
+            <div class="tit-i">
+                <h3>网上报名</h3>
+                <h5>Online registration <span>registration</span></h5>
+            </div>
+            <div class="c"></div>
+       
+          
+            <div class="contact">
+ <script type="text/javascript" src="{$GLOBALS['TURL']}js/jquery.js"></script>          
+<script type="text/javascript">
+
+// 字符最大长度验证（一个中文字符长度为2）
+function dyfrom_maxa(value, param) {
+	 var length = value.length;
+	 if (length==0){return true;} 
+	 for ( var i = 0; i < value.length; i++) {
+	  if (value.charCodeAt(i) > 127) {length++;}
+	 }
+	 return length <= param;
+}
+
+function postform(){
+
+	if($("#title").val()==""){
+		alert('请填写您的姓名');
+		return false;
+	}
+	
+	if($("#xingbie").val()==""){
+		alert('性别');
+		return false;
+	}
+	
+	if($("#shengri").val()==""){
+		alert('出生日期');
+		return false;
+	}
+	
+	if($("#guoji").val()==""){
+		alert('国籍');
+		return false;
+	}
+	
+	if($("#suozaixuexiao").val()==""){
+		alert('	所在学校');
+		return false;
+	}
+	
+	if($("#zaidukecheng").val()==""){
+		alert('	在读课程');
+		return false;
+	}
+	
+	if($("#suozainianji").val()==""){
+		alert('所在年级');
+		return false;
+	}
+	if($("#lxrname").val()==""){
+		alert('联系人姓名');
+		return false;
+	}
+	
+	if($("#lxrgx").val()==""){
+		alert('联系人的关系');
+		return false;
+	}
+	if($("#lxrphone").val()==""){
+		alert('联系人电话');
+		return false;
+	}
+	if($("#email").val()==""){
+		alert('联系人邮箱');
+		return false;
+	}
+	
+	value=$("#body").val();
+	if(!dyfrom_maxa(value, 500)){
+		alert('内容不能大于500个字符');
+		return false;
+	}
+	return true;
+}
+</script>
+
+
+                
+                <form action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=24" class="contact-form" method="post">
+                  <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
+  <tr>
+    <td width="50%">姓名Name of Student（汉字）*</td>
+    <td width="50%" height="40">性别 Gender*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="title" id="title" placeholder="您的姓名"></td>
+    <td height="40"><label><input name="xingbie" type="radio" id="xingbie" value="值1">&nbsp;男</label>&nbsp;
+                                 <label><input name="xingbie" type="radio" id="xingbie"  value="值2">&nbsp;女</label></td>
+  </tr>
+ 
+  
+
+ 
+  <tr>
+    <td height="40">出生日期 （DD/ MM / YYYY）Date&nbsp;of&nbsp;Birth*</td>
+    <td height="40">国籍Nationality*</td>
+  </tr>
+  <tr>
+    <td><input class="minp l" id="shengri" name="shengri"  type="text" placeholder="出生日期"></td>
+    <td height="40"><input type="text" class="minp l" name="guoji2" id="guoji2" placeholder="国籍" /></td>
+  </tr>
+ 
+ 
+  <tr>
+    <td height="40" colspan="2">所在学校 Current School*</td>
+    </tr>
+  <tr>
+    <td height="40" colspan="2"><input type="text" class="minp l" name="suozaixuexiao" id="suozaixuexiao" placeholder="所在学校"  style="width:97.5%"/></td>
+    </tr>
+  <tr>
+    <td height="40">在读课程 Course&nbsp;of&nbsp;study*</td>
+    <td height="40">所在年级Grade*</td>
+  </tr>
+  <tr>
+    <td height="40"> <label><input name="zaidukecheng" type="radio" id="zaidukecheng"  value="值1">&nbsp;国内课程 </label>&nbsp;
+                                <label><input name="zaidukecheng" type="radio" id="zaidukecheng" value="值2">&nbsp;国际课程</label>&nbsp;</td>
+    <td height="40"><label><input name="suozainianji" type="radio" id="suozainianji" value="值1">&nbsp;8</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji"  value="值2">&nbsp;9</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji"  value="值3">&nbsp;10</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji" value="值4">&nbsp;11</label></td>
+  </tr>
+  
+    <tr>
+    <td>联系人姓名 Contact Person*</td>
+    <td height="40">联系人电话 Phone Number*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="lxrname" id="lxrname" placeholder="联系人姓名"></td>
+    <td height="40"><input type="text" class="minp l" name="lxrphone" id="lxrphone" placeholder="联系人电话" /></td>
+  </tr>
+   <tr>
+    <td>与联系人关系 Relationship*</td>
+    <td height="40">联系人邮箱 Email*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="lxrgx" id="lxrgx" placeholder="与联系人关系"></td>
+    <td height="40"><input type="text" class="minp l" name="email" id="email" placeholder="联系人邮箱" /></td>
+  </tr>
+  <tr>
+    
+  </tr>
+  <tr>
+    <td height="40" colspan="2"><input type="submit" value="提交您的信息" class="sub" ></td>
+    </tr>
+</table>
+ 
+              </form>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="map">
+    <div class="map-s">
+        <a href="javascript:void(0);" class="btn"><em></em>点击展开地图</a>
+    </div>
+    <div class="map-pop">
+        <a href="javascript:void(0);" class="btn-down"></a>
+        <div class="map-bg1"></div>
+        <div class="map-bg2"></div>
+        <div id="map" class="map-i" style="width:100%; height: 100%;">
+        </div>
+    </div>
+</div>       
+{include="foot.html"}

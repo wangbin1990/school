@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="ytmanage/admin/template/style/admin.css" rel="stylesheet" type="text/css" />
+<?php if($postgo=='add'||$postgo=='edit'){ ?>
+<script src="include/js/jquery.js" type="text/javascript"></script>
+<script src="include/js/xheditor/xheditor-zh-cn.min.js" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#fieldsinfo").append("<dl><dt>&nbsp;</dt><dd><img src='include/js/uploadify/loading.gif' /></dd>");
+	$.ajax({
+		url: 'ytmanage.php?c=a_fields&a=info',type: 'post',
+		cache: false,
+		data: "molds=member&id=<?php echo $d['id'];?>&gid=<?php echo $d['gid'];?>",
+		success: function(html){
+			$("#fieldsinfo").empty();
+			
+			$("#fieldsinfo").append(html);
+		}
+	});
+});
+</script>
+<SCRIPT language=JavaScript>
+var city = new Array(
+new Array("::市::-"),
+new Array("上海-上海","黄浦区-黄浦区","南市区-南市区","卢湾区-卢湾区","徐汇区-徐汇区","长宁区-长宁区","静安区-静安区","普陀区-普陀区","闸北区-闸北区","虹口区-虹口区","杨浦区-杨浦区","宝山区-宝山区","闵行区-闵行区","浦东新区-浦东新区","嘉定区-嘉定区","宝山区-宝山区","南汇-南汇","奉贤-奉贤","松江-松江","金山-金山","青浦-青浦","崇明-崇明","其它-其它"),
+new Array("北京-北京","其它-其它"),
+new Array("重庆-重庆","其它-其它"),
+new Array("福州-福州","泉州-泉州","三明-三明","漳州-漳州","南平-南平","宁德-宁德","龙岩-龙岩","莆田-莆田","厦门-厦门","其它-其它"),
+new Array("兰州-兰州","其它-其它"),
+new Array("广州-广州","深圳-深圳","佛山-佛山","中山-中山","江门-江门","惠州-惠州","东莞-东莞","汕头-汕头","湛江-湛江","茂名-10","肇庆-11","韶关-12","阳江-13","珠海-14","其它-其它"),
+new Array("南宁-南宁","桂林-桂林","柳州-柳州","其它-其它"),
+new Array("贵阳-贵阳","其它-其它"),
+new Array("海口-海口","三亚-三亚","其它-其它"),
+new Array("石家庄-石家庄","邯郸-邯郸","秦皇岛-秦皇岛","唐山-唐山","沧州-沧州","廊坊-廊坊","保定-保定","张家口-张家口","邢台-邢台","其它-其它"),
+new Array("哈尔滨-哈尔滨","大庆-鸡西","鸡西-鸡西","齐齐哈尔-齐齐哈尔","佳木斯-佳木斯","牡丹江-牡丹江","其它-其它"),
+new Array("杭州-杭州","嘉兴-嘉兴","温州-温州","义乌-义乌","宁波-宁波","湖州-湖州","绍兴-绍兴","台州-台州","丽水-丽水","金华-金华","衢州-衢州","舟山-舟山","其它-其它"),
+new Array("武汉-武汉","襄樊-襄樊","宜昌-宜昌","荆州-荆州","黄石-黄石","荆门-荆门","十堰-十堰","潜江-潜江","仙桃-仙桃","其它-其它"),
+new Array("长沙-长沙","株州-株州","岳阳-岳阳","常德-常德","湘潭-湘潭","娄底-娄底","怀化-怀化","永州-永州","衡阳-衡阳","邵阳-邵阳","郴州-郴州","益阳-益阳","张家界-张家界","吉首-吉首","其它-其它"),
+new Array("呼和浩特-呼和浩特","其它-其它"),
+new Array("南京-南京","无锡-无锡","镇江-镇江","南通-南通","扬州-扬州","盐城-盐城","徐州-徐州","淮阴-淮阴","连云港-连云港","常州-常州","泰州-泰州","苏州-苏州","其它-其它"),
+new Array("南昌-南昌","九江-九江","其它-其它"),
+new Array("长春-长春","吉林-吉林","四平-四平","延吉-延吉","松原-松原","白山-白山","通化-通化","其它-其它"),
+new Array("沈阳-沈阳","大连-大连","金州-金州","瓦房店-瓦房店","庄河-庄河","阜新-阜新","辽阳-辽阳","丹东-丹东","营口-营口","盘锦-盘锦","抚顺-抚顺","本溪-本溪","鞍山-鞍山","锦州-锦州","葫芦岛-葫芦岛","铁岭-铁岭","朝阳-朝阳","其它-其它"),
+new Array("银川-银川","其它-其它"),
+new Array("西宁-西宁","其它-其它"),
+new Array("太原-太原","大同-大同","其它-其它"),
+new Array("西安-西安","咸阳-咸阳","宝鸡-宝鸡","汉中-汉中","其它-其它"),
+new Array("济南-济南","青岛-青岛","日照-日照","东营-东营","潍坊-潍坊","泰安-泰安","淄博-淄博","烟台-烟台","威海-威海","济宁-济宁","滨州-滨州","临沂-临沂","其它-其它"),
+
+new Array("合肥-合肥","芜湖-芜湖","蚌埠-蚌埠","巢湖-巢湖","滁州-滁州","淮南-淮南","安庆-安庆","池州-池州","宣城-宣城","马鞍山-马鞍山","黄山-黄山","铜陵-铜陵","宿州-宿州","淮北-淮北","阜阳-阜阳","其它-其它"),
+new Array("成都-成都","泸州-泸州","德阳-德阳","乐山-乐山","绵阳-绵阳","宜宾-宜宾","自贡-自贡","攀枝花-攀枝花","内江-内江","南充-南充","其它-其它"),
+new Array("天津-天津","其它-其它"),
+new Array("拉萨-拉萨","其它-其它"),
+new Array("乌鲁木齐-乌鲁木齐","昌吉-昌吉","伊宁-伊宁","其它-其它"),
+new Array("昆明-昆明","大理-大理","其它-其它"),
+new Array("香港-香港"),
+new Array("澳门-澳门"),
+new Array("台湾-台湾"),
+new Array("其他-其他")
+);
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+
+
+function changecity(){
+	
+	index = addnew.gr_gzdd.options.selectedIndex;
+	addnew.gr_city.length = city[index].length;
+	for(var i = 0;i<city[index].length;i++)
+	{
+		var text = city[index][i].split("-");
+		addnew.gr_city.options[i].text = text[0];
+		addnew.gr_city.options[i].value =text[1];
+	}
+}
+</SCRIPT>
+<?php } ?>
+</head>
+
+<body>
+
+<div class="maintop">当前位置：<?php echo $toptxt ?></div>
+<div class="main">
+<div class="oper">
+	<a href="?c=a_member">会员管理</a>
+    <a href="?c=a_member&a=add">添加会员</a>
+    <!--
+    <a href="?c=a_member&a=glist">会员分组管理</a>
+    
+    <a href="?c=a_member&a=gadd">添加会员分组</a>
+    <a href="?c=a_fields&molds=member">字段管理</a>
+    -->
+</div>
+<?php if($postgo=='add'||$postgo=='edit'){ ?>
+	<div class="info">
+    <form action="?c=a_member&a=<?php echo $postgo ?>&run=1" method="post" name="addnew">
+    <input name="id" type="hidden" value="<?php echo $d['id'] ?>" />
+
+    <dl style="border:0;"><dt>用户名称：</dt><dd><?php if($postgo=='add'){ ?>
+    <input name="user" type="text" class="int" /></dd><dd class="t">最大长度20，支持中英文数字</dd>
+    <?php }else{ echo $d['user'];?><input name="user" type="hidden" value="<?php echo $d['user'] ?>" /><?php } ?>
+    </dl>
+    <dl><dt>用户密码：</dt><dd><input name="pass" type="password" class="int" /></dd><?php if($postgo!='add')echo '<dd class="t">不修改请留空</dd>'; ?></dl>
+    <dl><dt>手机号码：</dt><dd><input name="telphone" type="text" value="<?php echo $d['telphone'] ?>" class="int" /></dd></dl>
+    <dl><dt>Email地址：</dt><dd><input name="email" type="text" value="<?php echo $d['email'] ?>" class="int" /></dd></dl>
+    <!--
+    <dl><dt>邮箱：</dt><dd><input name="email" type="text" class="int" value="<?php echo $d['email'] ?>" /></dd><dd class="t">可留空</dd></dl>
+    -->
+    <?php if($d['gid']){?>
+    <!-- 区域-->
+    <dl><dt>
+    	<?php 
+        	if($d['gid']==1 || $d['gid']==3) echo "地区：";
+        	if($d['gid']==2) echo "贵公司所在地区：";
+        
+        ?>
+        
+        
+        </dt>
+    	<dd>
+        <select onChange="changecity()" name="gr_gzdd">
+            <option value="">::请选择::</option>
+            <option value=上海 >上海 </option>
+            <option value=北京 >北京 </option>
+            <option value=重庆 >重庆 </option>
+            <option value=福建 >福建 </option>
+            <option value=甘肃 >甘肃 </option>
+            <option value=广东 >广东 </option>
+            <option value=广西 >广西 </option>
+            <option value=贵州 >贵州 </option>
+            <option value=海南 >海南 </option>
+            <option value=河北 >河北 </option>
+            <option value=黑龙江 >黑龙江 </option>
+            <option value=浙江 >浙江 </option>
+            <option value=湖北 >湖北 </option>
+            <option value=湖南 >湖南 </option>
+            <option value=内蒙古 >内蒙古 </option>
+            <option value=江苏 >江苏 </option>
+            <option value=江西 >江西 </option>
+            <option value=吉林 >吉林 </option>
+            <option value=辽宁 >辽宁 </option>
+            <option value=宁夏 >宁夏 </option>
+            <option value=青海 >青海 </option>
+            <option value=山西 >山西 </option>
+            <option value=陕西 >陕西 </option>
+            <option value=山东 >山东 </option>
+            <option value=安徽 >安徽 </option>
+            <option value=四川 >四川 </option>
+            <option value=天津 >天津 </option>
+            <option value=西藏 >西藏 </option>
+            <option value=新疆 >新疆</option>
+            <option value=云南 >云南 </option>
+            <option value=香港 >香港 </option>
+            <option value=澳门 >澳门 </option>
+            <option value=台湾 >台湾 </option>
+        </select>     
+        <?php
+        //if($d['gid']==1){
+        ?>
+        <select name="gr_city">
+            <option value="">市</option>
+        </select>
+        <?php //} ?>
+        </dd>
+        <dd class="t"></dd>
+    </dl>
+    <!-- 区域 -->
+    <?php }?>
+    <?php if(funsinfo('pay','isshow')==1){ ?>
+    <dl><dt>现金余额：</dt><dd><input name="money" type="text" class="int" value="<?php echo $d['money'] ?>" /></dd><dd class="t">可留空</dd></dl>
+    <?php } ?>
+    <dl><dt>会员分组：</dt><dd><select name="gid">
+        <?php foreach($glista as $v){ 
+        	if($v['gid'] == 3) continue;
+        ?>
+            <option value="<?php echo $v['gid'] ?>"<?php if($d['gid']==$v['gid'])echo ' selected="selected"'; ?>><?php echo $v['weight'] ?>级—<?php echo $v['name'] ?></option>
+        <?php } ?>
+    </select></dd></dl>
+    <?php if($d['gid']){?>
+    <span id="fieldsinfo"></span>
+    <?php }?>
+    <dl><dt>&nbsp;</dt><dd><input type="submit" value="提 交" class="btnbig" /></dd></dl>
+    </form>
+    </div>
+<?php } ?>
+<?php if($postgo==''){ ?>
+<table width="100%">
+  <tr>
+    <td>
+    <form action="ytmanage.php" method="get" id="search">
+     <input name="c" type="hidden" value="a_member" />
+     <select name="gid">
+     	<option value="1">个人会员</option>
+        <option value="2">企业会员</option>
+        <!--
+        <option value="3">专家会员</option>
+        -->
+     </select>
+    姓名：<input name="name" type="text" style="width:120px;" value="<?=$_GET['name'] ?>" />
+ 
+    <input name="search" type="submit" value="查找" class="btnmini" />
+    </form></td>
+  </tr><tr><td height="5"></td></tr>
+</table>
+    <table width="100%" class="tablist">
+      <tr class="trbg">
+        <td width="40">ID</td>
+        <td>用户名</td>
+        <!--
+        <td width="100">是否推荐</td>
+        -->
+        <td width="100">状态</td>
+        <td width="250">操作</td>
+      </tr>
+    <?php foreach($lists as $v){ ?>
+      <tr>
+        <td><?php echo $v['id']; ?></td>
+        <td class="tdleft"><a href="?c=a_member&a=edit&id=<?php echo $v['id']; ?>"><?php echo $v['user']; ?>
+        <?php if($v['gid']==1){ echo "   " ?><span style="color:#F00;">[个人会员]</span><?php } ?>
+        <?php if($v['gid']==2){ echo "   " ?><span style="color:#00F;">[企业会员]</span><?php } ?>
+        <!--
+        <?php if($v['gid']==3){ echo "   " ?><span style="color:#F60;">[专家会员]</span><?php } ?>
+        -->
+        </a></td>
+        <!--
+        <td>
+        	<?php 
+            	if($v['is_t']==0){ 
+            		echo '<span style="color:#F00;">未推荐</span>';
+                }else{
+                	echo '<span style="color:#060;">已推荐</span>';
+                }
+            ?>
+        </td>
+        -->
+        <td>
+        	<?php 
+            	if($v['ishow']==0){ 
+            		echo '<span style="color:#F00;">未审核</span>';
+                }else{
+                	echo '<span style="color:#060;">已审核</span>';
+                }
+            ?>
+        </td>
+        <td><a href="?c=a_member&a=edit&id=<?php echo $v['id']; ?>">编辑</a>&nbsp;&nbsp;
+        	<!--
+            <a href="?c=a_member&a=mtuijian&id=<?php echo $v['id']; ?>">
+            <?php
+            if($v['is_t']==0){echo '推荐';}else{echo '取消推荐';}
+            ?>
+            </a>&nbsp;&nbsp;
+            -->
+        	<a href="?c=a_member&a=mshenhe&id=<?php echo $v['id']; ?>">
+            <?php
+            if($v['ishow']==0){echo '审核';}else{echo '取消审核';}
+            ?>
+            </a>&nbsp;&nbsp;
+            
+    		<a href="?c=a_member&a=del&id=<?php echo $v['id']; ?>">删除</a>
+        </td>
+      </tr>
+    <?php } ?>
+    </table>
+    <!-- 新增会员 分页start -->
+    <table width="100%">
+		<tr><td height="35"><ul class="pages"><?php echo $pages; ?></ul></td></tr>
+    </table>
+    <!-- 新增会员 分页end -->
+<?php } ?>
+<?php if($postgo=='gadd'||$postgo=='gedit'){ ?>
+	<div class="info">
+    <form action="?c=a_member&a=<?php echo $postgo ?>&run=1" method="post">
+    <input name="gid" type="hidden" value="<?php echo $d['gid'] ?>" />
+    <dl style="border:0;"><dt>分组名称：</dt><dd><input name="name" type="text" class="int" value="<?php echo $d['name'] ?>" /></dd><dd class="t">最大长度20，支持中英文数字</dd></dl>
+    <dl><dt>分组级别：</dt><dd><select name="weight">
+      <option value="1"<?php if($d['weight']==1)echo ' selected="selected"'; ?>>1级</option>
+      <option value="2"<?php if($d['weight']==2)echo ' selected="selected"'; ?>>2级</option>
+      <option value="3"<?php if($d['weight']==3)echo ' selected="selected"'; ?>>3级</option>
+      <option value="4"<?php if($d['weight']==4)echo ' selected="selected"'; ?>>4级</option>
+      <option value="5"<?php if($d['weight']==5)echo ' selected="selected"'; ?>>5级</option>
+      <option value="6"<?php if($d['weight']==6)echo ' selected="selected"'; ?>>6级</option>
+      <option value="7"<?php if($d['weight']==7)echo ' selected="selected"'; ?>>7级</option>
+      <option value="8"<?php if($d['weight']==8)echo ' selected="selected"'; ?>>8级</option>
+      <option value="9"<?php if($d['weight']==9)echo ' selected="selected"'; ?>>9级</option>
+      <option value="10"<?php if($d['weight']==10)echo ' selected="selected"'; ?>>10级</option>
+    </select></dd><dd class="t">越大权限越高，大级别拥有下级全部权限</dd></dl>
+    <dl><dt>是否允许投稿：</dt><dd><label><input name="submit" type="radio" value="1"<?php if($d['submit']==1)echo ' checked="checked"' ?> />是</label> <label><input type="radio" name="submit" value="0"<?php if($d['submit']==0 || $postgo=='add')echo ' checked="checked"' ?> />否</label> </dd></dl>
+    <dl><dt>投稿默认审核：</dt><dd><label><input name="audit" type="radio" value="1"<?php if($d['audit']==1)echo ' checked="checked"' ?> />已审</label> <label><input type="radio" name="audit" value="0"<?php if($d['audit']==0 || $postgo=='add')echo ' checked="checked"' ?> />未审</label> </dd><dd class="t">本组会员发布内容默认是否审核</dd></dl>
+    <dl><dt>允许上传类型：</dt><dd><input name="filetype" type="text" class="int" value="<?php if($d['filetype']!=''){echo $d['filetype'];}else{echo 'jpg,gif,jpeg,png';} ?>" style="width:300px;"/></dd><dd class="t">多个类型用,分割</dd></dl>
+    <dl><dt>上传单个最大：</dt><dd><input name="filesize" type="text" class="int" value="<?php if($d['filesize']!=''){echo round($d['filesize']);}else{echo 200;} ?>" style="width:60px;"/> K</dd><dd class="t">本组单个会员上传附件单个大小限制</dd></dl>
+    <dl><dt>上传总量最大：</dt><dd><input name="fileallsize" type="text" class="int" value="<?php if($d['fileallsize']!=''){echo round($d['fileallsize']);}else{echo 5000;} ?>" style="width:60px;"/> K</dd><dd class="t">本组单个会员上传附件总共大小限制</dd></dl>
+    <dl><dt>&nbsp;</dt><dd><input type="submit" value="提 交" class="btnbig" /></dd></dl>
+    </form>
+    </div>
+<?php } ?>
+<?php if($postgo=='glist'){ ?>
+    <table width="100%" class="tablist">
+      <tr class="trbg">
+        <td width="40">ID</td>
+        <td>分组名称</td>
+        <td width="150">操作</td>
+      </tr>
+    <?php foreach($lists as $v){ ?>
+      <tr>
+        <td><?php echo $v['gid']; ?></td>
+        <td class="tdleft"><a href="?c=a_member&a=gedit&gid=<?php echo $v['gid']; ?>"><?php echo $v['name']; ?></a></td>
+        <td><a href="?c=a_member&a=gedit&gid=<?php echo $v['gid']; ?>">编辑</a>&nbsp;&nbsp;
+    <a href="?c=a_member&a=gdel&gid=<?php echo $v['gid']; ?>">删除</a></td>
+      </tr>
+    <?php } ?>
+    </table>
+<?php } ?>
+</div>
+<script>
+
+addnew.gr_gzdd.value="<?php echo $d['gr_gzdd'] ?>";
+changecity();
+addnew.gr_city.value="<?php echo $d['gr_city'] ?>";
+
+</script>
+</body>
+</html>
+

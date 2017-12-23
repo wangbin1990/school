@@ -1,0 +1,95 @@
+<div class="c"></div>
+<div id="fd" class="index-fd pr">
+    <div class="map-bg3"></div>
+    <div class="wp">
+        <div class="fd-top">       
+       {loop table="classtype" pid="0" as="v" mshow="1"}
+       <dl><dt><a href="{$v['url']}" style="color:#fff">{$v['classname']}</a></dt></dl>
+       {/loop}
+            
+            
+        </div>
+  </div>
+    <div class="fd-copy">
+        <div class="wp">
+            <p>
+                <span>{$GLOBALS['S']['title']}Copyright&copy;2017 <a href="http://www.miitbeian.gov.cn/" style="color:#FFFFFF">粤ICP备17038050号</a></span></p>
+      </div>
+    </div>
+</div>
+<div class="side">
+    <ul>
+        <li><a href="tencent://message/?uin=26961518&Site=Sambow&Menu=yes" target="_blank"><div class="sidebox"><img src="{$GLOBALS['TURL']}images/side_icon01.png">在线咨询</div></a></li>
+        
+      <li><a href="tencent://message/?uin=695346680&Site=Sambow&Menu=yes" target="_blank"><div class="sidebox"><img src="{$GLOBALS['TURL']}images/side_icon01.png">在线咨询</div></a></li>
+        
+        <li><a href="javascript:void(0);" ><div class="sidebox"><img src="{$GLOBALS['TURL']}images/side_icon03.png">07563639981</div></a></li>
+         <li><a href="javascript:void(0);" ><div class="sidebox"><img src="{$GLOBALS['TURL']}images/side_icon03.png">07563639982</div></a></li>
+    </ul>
+</div>
+<div class="side2">
+    <ul>
+        <li><a href=""><img src="{$GLOBALS['TURL']}images/r_icon1.png" alt=""></a><div class="weixin"><em></em><img src="{$GLOBALS['TURL']}images/ewm.jpg" alt=""></div></li>
+        <li><a href="javascript:goTop();" class="sidetop"><img src="{$GLOBALS['TURL']}images/r_icon2.png"></a></li>
+    </ul>
+</div>
+</div>
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/jquery.js"></script>
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/lib.js"></script>
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/flexslider.js"></script>
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/banner.js"></script>
+<script>
+    $('.ul-news-i li').hover(function(){
+        $(this).toggleClass('on');
+    })
+    $('.ul-icon-i li').hover(function(){
+        $(this).find('img:first').fadeIn(100);
+        $(this).find('.pic-icon').animate({top:0});
+    },function(){
+        $(this).find('.pic-icon').animate({top:-134});
+        $(this).find('img:first').fadeOut(100);
+    })
+
+    $('.case-img').hover(function(){
+        $(this).toggleClass('on');
+    })
+
+    $('.map .btn').click(function(){
+        $('.map-pop').show();
+        $(this).parents('.map').addClass('map-big-i');
+        var winW = $(window).width();
+        var winH = $(window).height();
+        console.log(winH);
+        if(winW < 768){
+            $('.map-pop').height($(window).height()-50-80);
+            $('.map-big-i').height($(window).height()-50-80);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        }else{
+
+            $('.map-pop').height($(window).height()-344);
+            $('.map-big-i').height($(window).height()-344);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        }
+        initMap();
+    })
+    $('.map .btn-down').click(function(){
+        $('.map-pop').hide();
+        $(this).parents('.map').removeClass('map-big-i');
+        $('.map').height('107');
+    })
+
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5b31afcdea6af2d7d3677ca5c1a22c46"></script>
+<script type="text/javascript" src="{$GLOBALS['TURL']}js/map.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f6f822ccdaa0926e7485859ec747039a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

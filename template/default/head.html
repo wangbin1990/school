@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="full-screen" content="yes">
+<title>{$GLOBALS['S']['title']}</title>
+<meta name="Keywords" content="{$GLOBALS['S']['keywords']}" />
+<meta name="Description" content="{$GLOBALS['S']['description']}" />
+    <link rel="stylesheet" href="{$GLOBALS['TURL']}css/cui.css" />
+    <link rel="stylesheet" href="{$GLOBALS['TURL']}css/style.css" />
+    <link rel="stylesheet" href="{$GLOBALS['TURL']}css/less.css" />
+    <link rel="stylesheet" href="{$GLOBALS['TURL']}css/animate.css" />
+<link rel="stylesheet" href="{$GLOBALS['TURL']}css/flexslider.css" />
+</head>
+<body>
+<div id="hd">
+    <!--上条-->
+    <div id="tops"><table width="1100" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="740"  align="right">&nbsp;<a href="javascript:alert('建设中...');" ><img src="{$GLOBALS['TURL']}images/jzdl.png" /></a></td>
+    <td width="282" align="right" style="color:#cc0000; font-size:14px;">咨询热线：0756-3639981 0756-3639982</td>
+    <td width="78" align="center" style="color:#999999; font-size:14px; "><a href="javascript:alert('建设中...');" style=" color:#999999">English</a></td>
+  </tr>
+</table>
+</div>
+    <!--上条end-->
+    <div class="wp">
+        <div class="logo"><a href="index.php"><img src="{$GLOBALS['TURL']}images/logo.png" alt=""></a></div>
+        <div id="nav">
+            <ul>
+                <li><a href="index.php">首页</a></li>
+                {loop table="classtype" pid="0" as="v" mshow="1"}
+                <li><a href="{$v['url']}" >{$v['classname']}</a></li>
+                {/loop} 
+            </ul>
+        </div>
+      
+    </div>
+</div>
+<div class="c"></div>
+<div id="m-hd">
+    <a href="index.php" class="m-logo"><img src="{$GLOBALS['TURL']}images/logo.png" alt=""></a>
+    <div class="m-trigger"></div>
+    <ul class="m-nav">
+        <li><a href="index.php">首页 </a></li>
+       {loop table="classtype" pid="0" as="v" mshow="1"}
+       <li><a href="{$v['url']}" >{$v['classname']}</a></li>
+       {/loop}
+    </ul>
+</div>
+<div class="c"></div>	

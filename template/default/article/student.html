@@ -1,0 +1,47 @@
+{include="head.html"}
+<div id="bd">
+  <div id="ban-in" style="background-image:url({$GLOBALS['TURL']}images/zsxx.jpg)">
+    <div class="miaoshu"><div class="name"></div></div>
+    <div class="ban-bg"></div>
+  </div>
+  <div class="c"></div>
+  <div class="wp" id="whous">
+    <div class="tit-i">
+        <h3>英华学子</h3>
+        <h5>OUR <span>students</span></h5>
+    </div>
+    <div class="c"></div>
+    <div class="sub-nav">
+    <ul>
+    {loop table="classtype" pid="10" mshow="1"}
+        <li ><a href="{$v['url']}">{$v['classname']}</a></li>
+    {/loop}    
+    </ul>
+   </div>
+    <ul class="ul-list">
+  {foreach $lists as $v}
+    <li>
+        <div class="pad">
+            <div class="pic"><a href="{$v['url']}"> <img src="{$v['litpic']}"  width="275" height="200"  /></a></div>
+            <div class="bor">
+                <div class="txt">
+                    <div class="title">
+                        <span><em>{fun date('d',$v['addtime'])} </em> {fun date('Y-m',$v['addtime'])} </span>
+                        <h3><a href="{$v['url']}" target="_blank">{fun newstr($v['title'],40)}</a></h3>
+                    </div>
+                    <a href="{$v['url']}"><p>{fun newstr($v['description'],100)}</p></a>
+                </div>
+                <div class="more"><a href="{$v['url']}" class="r">查看更多 ></a></div>
+            </div>
+        </div>
+    </li>
+     {/foreach} 
+  </ul>
+  </div>
+  <div class="wp">
+    <ul class="pages">
+        {$pages}
+    </ul>
+</div>
+</div>        
+{include="foot.html"}

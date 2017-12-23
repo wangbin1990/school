@@ -1,0 +1,82 @@
+{include="head.html"}
+<div id="bd">
+  <div id="ban-in" style="background-image:url({$GLOBALS['TURL']}images/14415956337556.jpg)">
+    <div class="miaoshu"><div class="name"></div></div>
+    <div class="ban-bg"></div>
+  </div>
+  <div class="row4 fix">
+        <div class="wp">
+            <div class="tit-i">
+                <h3>联系我们</h3>
+                <h5>Contact <span>us</span></h5>
+            </div>
+            <div class="c"></div>
+       
+            <div class="contact-l">
+                <ul class="ul-contact">
+                   <li class="li1">珠海•香洲•哈工大集团经济港教学楼</li>
+                <li class="li2" ><a href="tel:0756-3639981">0756-3639981 (咨询)</a> / <a href="tel:0756-3639982">0756-3639982 (咨询)<br /></a></li>
+                <li class="li3"><a href="http://www.ycs-alevel.com">www.ycs-alevel.com</a></li>
+                </ul>
+            </div>
+            <div class="contact-r">
+            <script type="text/javascript">
+
+// 字符最大长度验证（一个中文字符长度为2）
+function dyfrom_maxa(value, param) {
+	 var length = value.length;
+	 if (length==0){return true;} 
+	 for ( var i = 0; i < value.length; i++) {
+	  if (value.charCodeAt(i) > 127) {length++;}
+	 }
+	 return length <= param;
+}
+
+function postform(){
+
+	if($("#title").val()==""){
+		alert('请填写您的姓名');
+		return false;
+	}
+
+	if($("#phone").val()==""){
+		alert('请填写您的电话');
+		return false;
+	}
+	
+	value=$("#body").val();
+	if(!dyfrom_maxa(value, 500)){
+		alert('内容不能大于500个字符');
+		return false;
+	}
+	return true;
+}
+</script>
+                <!--<iframe scrolling="no" frameborder="0" src="guest.php" width="100%" height="235"></iframe>-->
+                <form action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=5" class="contact-form" method="post">
+                    <div class="">
+                        <input type="text" class="inp l" name="title" id="title" placeholder="您的姓名">
+                   
+                    <input type="text" class="inp r" name="phone" id="phone" placeholder="您的联系方式">
+                    </div>
+                    <textarea cols="30" rows="10" name="body" id="body"></textarea>
+                <input type="submit" value="提交您的需求" class="sub" >
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
+     <div class="about-info"><img src="{$GLOBALS['TURL']}images/lianxiwom.jpg" /></div>
+<div class="map">
+    <div class="map-s">
+        <a href="javascript:void(0);" class="btn"><em></em>点击展开地图</a>
+    </div>
+    <div class="map-pop">
+        <a href="javascript:void(0);" class="btn-down"></a>
+        <div class="map-bg1"></div>
+        <div class="map-bg2"></div>
+        <div id="map" class="map-i" style="width:100%; height: 100%;">
+        </div>
+    </div>
+</div>       
+{include="foot.html"}

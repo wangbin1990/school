@@ -1,0 +1,40 @@
+{include="head.html"}
+<div id="bd">
+  <div id="ban-in" style="background-image:url({$GLOBALS['TURL']}images/jryh.jpg)">
+    <div class="miaoshu"><div class="name"></div></div>
+    <div class="ban-bg"></div>
+  </div>
+  <div class="c"></div>
+  <div class="wp" id="whous">
+    <div class="tit-i">
+        <h3>加入英华</h3>
+        <h5>JOIN <span>YINGHUA</span></h5>
+    </div>
+    <div class="c"></div>
+    <div class="sub-nav">
+
+</div>
+    <div class="about-info">
+    <table width="90%" border="0" cellspacing="0" cellpadding="0">{foreach $lists as $v}
+  <tr>
+    <td width="25" height="36">·</td>
+    <td style="font-family:微软雅黑; font-size:14px; color:#222; line-height:36px;">{fun newstr($v['title'],200)}</td>
+    <td width="100"><a href="{$v['url']}" target="_blank" style="font-family:微软雅黑; font-size:14px; line-height:36px;color:#FF0000">点击查看 >></a></td>
+  </tr>
+  <tr>
+    <td height="1" colspan="3" style="border-bottom : dashed 1px #CCCCCC;"></td>
+    </tr>
+       {/foreach} 
+        <tr>
+    <td height="50" colspan="3"><div class="wp">
+    <ul class="pages">
+        {$pages}
+    </ul>
+</div></td>
+    </tr>
+</table>
+
+    </div>
+  </div>
+</div>        
+{include="foot.html"}

@@ -1,0 +1,25 @@
+{include="article/head2.html"}
+
+
+<div class="fenye">
+	
+    {loop table="classtype" tid="6" as="v"}
+        <div class="fenye_top"><img src="{$v['litbanner2']}" /></div>
+        <div class="fenye_bot"><img src="{$v['litbanner3']}" /></div>
+    
+        <div class="fenye_fl">
+            <img src="{$v['litpic']}" width="452" height="246" />
+            <img src="{$v['litbanner']}" width="452" height="246" />
+        </div>
+    {/loop}
+    
+    <div class="fenye_fr">
+    	<div class="fenye_fr_top">{$type['description']}</div>
+        <div class="fenye_fr_bot">{fun labelcus(1,'body')}</div>
+    </div>
+    <div class="clear"></div>
+    
+</div>
+
+        
+{include="article/foot2.html"}

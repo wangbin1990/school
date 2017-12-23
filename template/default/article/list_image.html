@@ -1,0 +1,61 @@
+{include="article/head2.html"}
+<section id="container">
+	<div class="wrap-container clearfix">
+		<div class="sub-header ">
+			<div class="zerogrid"> 
+				<h1>{$type['classname']}</h1>
+				 <h2>专业品质成就明天</h2>
+			</div>
+		</div>	
+		<div class="zerogrid">
+			<div class="row">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div id="main-content">
+							<div class="wrap-content">
+							  <table width="100%" border="0">
+                              <tr>
+                                  <td height="136"></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="{$GLOBALS['TURL']}images/cp.jpg"></td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family:微软雅黑">
+                                     <!--Start Box-->
+                  <div class="content-box box-1 ">
+                    <!--产品-->
+                    {foreach $lists as $v}
+					<div class="col-1-3">
+						<div class="wrap-col item">
+					   		<div class="zoom-container"><img src="{$v['litpic']}" /></div>
+			                <div class="item-content">
+								<span>{$v['title']} </span>
+								<p>{$v['description']} </p>
+								<a class="btn" href="{$v['url']}">more>></a>
+							</div>
+						</div>
+					</div>
+                    <!--产品end-->
+                    {/foreach}
+		          </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td> <div class="page">
+                                        <ul class="c pages">
+                                            {$pages}
+                                        </ul>
+                                  </div></td>
+                                </tr>
+                              </table>
+                            </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+        
+{include="article/foot2.html"}

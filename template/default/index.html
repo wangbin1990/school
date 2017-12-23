@@ -1,0 +1,343 @@
+{include="head.html"}
+<div id="bd">
+<div id="banner">
+    <div class="banner-bg"></div>
+    <div class="flexslider">
+        <ul class="slides">
+           <!-- <li class="s1">
+                <img src="{$GLOBALS['TURL']}images/banner1.jpg">
+                <div class="ban-txt">
+                    <h2 data-animate="fadeInDown" class="animated">世界名校的摇篮</h2>
+                    <h3 data-animate="fadeInRight" class="animated">THE CRADLE OF WORLD-FAMOUS UNIVERSITIES</h3>
+                    <h3 data-animate="fadeInUp" class="animated" ></h3>
+                </div>
+            </li>-->
+           <!-- <li class="s2">
+                <img src="{$GLOBALS['TURL']}images/banner2.jpg">
+                <div class="ban-txt">
+                    <h2 data-animate="fadeInRight" class="animated">学校介绍</h2>
+                    <h3 data-animate="fadeInDown" class="animated">School Introduction</h3>
+                    <h4 data-animate="fadeInUp" class="animated"></h4>
+                    <h6 data-animate="fadeInUp" class="animated"></h6>
+                </div>
+            </li>-->
+         <!--   <li class="s3">
+                <img src="{$GLOBALS['TURL']}images/banner3.jpg">
+                <div class="ban-txt">
+                    <h2 data-animate="fadeInDown" class="animated">师资力量</h2>
+                    <h3 data-animate="fadeInRight" class="animated">Faculty</h3>
+                    <h4 data-animate="fadeInUp" class="animated"></h4>
+                </div>
+            </li>-->
+             <li class="s3">
+                <img src="{$GLOBALS['TURL']}images/banner1.jpg">
+                <div class="ban-txt">
+                    <h2 data-animate="fadeInDown" class="animated">世界名校的摇篮</h2>
+                    <h3 data-animate="fadeInRight" class="animated">THE CRADLE OF WORLD-FAMOUS UNIVERSITIES</h3>
+                    <h4 data-animate="fadeInUp" class="animated"></h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end #banner -->
+<div class="row1 fix">
+    <div class="wp">
+        <div class="tit-i">
+            <h3>关于英华</h3>
+            <h5>about <span>YINGHUA</span></h5>
+        </div>
+        <ul class="ul-icon-i">
+            <li class="li1">
+                <div class="pad">
+                    <a href="index.php?c=article&a=type&tid=8">
+                        <span></span>
+                        <h3>学校介绍</h3>
+                        <em></em>
+                        <p>{loop table="classtype" tid="8" as="v"}{fun newstr($v['sbody'],100)}{/loop}</p>
+                        <div class="pic">
+                            <img src="{$GLOBALS['TURL']}images/m1.png" alt="">
+                            <img src="{$GLOBALS['TURL']}images/m2.png" alt="" class="pic-icon">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="li2">
+                <div class="pad">
+                    <a href="index.php?c=article&a=type&tid=9">
+                        <span></span>
+                        <h3>师资力量</h3>
+                        <em></em>
+                        <p>{loop table="classtype" tid="9" as="v"}{fun newstr($v['sbody'],100)}{/loop}</p>
+                        <div class="pic">
+                            <img src="{$GLOBALS['TURL']}images/m3.png" alt="">
+                            <img src="{$GLOBALS['TURL']}images/m4.png" alt="" class="pic-icon">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="li4">
+                <div class="pad">
+                    <a href="index.php?c=article&a=type&tid=3">
+                        <span></span>
+                        <h3>课程介绍</h3>
+                        <em></em>
+                        <p>{loop table="classtype" tid="3" as="v"}{fun newstr($v['sbody'],100)}{/loop}</p>
+                        <div class="pic">
+                            <img src="{$GLOBALS['TURL']}images/m5.png" alt="">
+                            <img src="{$GLOBALS['TURL']}images/m8.png" alt="" class="pic-icon">
+                        </div>
+                    </a>
+                </div>
+            </li>
+           <li class="li3">
+                <div class="pad">
+                    <a href="index.php?c=article&a=type&tid=12">
+                        <span></span>
+                        <h3>办学环境</h3>
+                        <em></em>
+                        <p>{loop table="classtype" tid="12" as="v"}{fun newstr($v['sbody'],100)}{/loop}</p>
+                        <div class="pic">
+                            <img src="{$GLOBALS['TURL']}images/m5.png" alt="">
+                            <img src="{$GLOBALS['TURL']}images/m6.png" alt="" class="pic-icon">
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--<div class="row2 fix">
+    <div class="wp">
+        <div class="tit-i">
+            <h3>课程介绍</h3>
+            <h5><span>CoursE</span> of YINGHUA</h5>
+        </div>
+        <div class="case-i">
+
+            <div class="case-i-r" style="width: 100%;">
+                <ul class="ul-case-i"> 
+                {loop table="article" tid="3" as="v" limit="8"}
+                    <li>
+                        <a href="{$v['url']}">
+                            <div class="pic"><img src="{$v['litpic']}" /></div>
+                            <div class="hover">
+                                <b></b>
+                                <div class="txt">
+                                    <img src="{$GLOBALS['TURL']}images/logo_small.png" alt="">
+                                    <h3>{fun newstr($v['title'],26)}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                  {/loop}
+                </ul>
+            </div>
+            <div class="c"></div>
+            <div class="more-i"><a href="index.php?c=article&a=type&tid=3"></a></div>
+        </div>
+    </div>
+</div>-->
+<div class="row3 news-bg">
+    <div class="wp">
+        <div class="tit-i tit-i-1">
+            <h3>新闻中心</h3>
+            <h5> News <span> information</span></h5>
+        </div>
+        <ul class="ul-news-i">
+        {loop table="article" tid="2" as="v" limit="4"}
+            <li>
+                <div class="pad">
+                    <div class="txt">
+                        <span><em> {fun date('d',$v['addtime'])}</em> {fun date('Y-m',$v['addtime'])}</span>
+                        <h3><a href="{$v['url']}">{fun newstr($v['title'],26)}</a></h3>
+                        <a href="{$v['url']}"><p>{fun newstr($v['description'],100)}</p></a>
+                        <a href="index.php?c=article&a=type&tid=2" class="more"></a>
+                    </div>
+                    <div class="hover">
+                        <div class="img" style="background: url({$v['litpic']}) 0 0 /100% 100% no-repeat;background: url({$v['litpic']}) 0 0 no-repeat\9;"></div>
+                        <div class="pad">
+                            <h3><a href="{$v['url']}">{fun newstr($v['title'],26)}</a></h3>
+                            <a href="{$v['url']}"><p>{fun newstr($v['description'],100)}</p></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+           {/loop} 
+        </ul>
+        <div class="c"></div>
+        <div class="news-more"><a href="index.php?c=article&a=type&tid=2">load more</a></div>
+    </div>
+</div>
+<div class="row4 fix">
+    <div class="wp">
+        <div class="tit-i">
+            <h3>网上报名</h3>
+            <h5><span>ONLINE REGISTRATION</span> REGISTRATION</h5>
+        </div>
+        <div class="contact-l">
+            <ul class="ul-contact">
+                <li class="li2" >0756-3639981/ 0756-3639982 <br /></li>
+                 <li class="li1">珠海•香洲•哈工大集团经济港教学楼</li>
+                <li class="li3"><img src="{$GLOBALS['TURL']}images/lianxiwomX.jpg"></li>
+            </ul>
+        </div>
+        <div class="contact-r">
+<script type="text/javascript">
+
+// 字符最大长度验证（一个中文字符长度为2）
+function dyfrom_maxa(value, param) {
+	 var length = value.length;
+	 if (length==0){return true;} 
+	 for ( var i = 0; i < value.length; i++) {
+	  if (value.charCodeAt(i) > 127) {length++;}
+	 }
+	 return length <= param;
+}
+
+function postform(){
+
+	if($("#title").val()==""){
+		alert('请填写您的姓名');
+		return false;
+	}
+	
+	if($("#xingbie").val()==""){
+		alert('性别');
+		return false;
+	}
+	
+	if($("#shengri").val()==""){
+		alert('出生日期');
+		return false;
+	}
+	
+	if($("#guoji").val()==""){
+		alert('国籍');
+		return false;
+	}
+	
+	if($("#suozaixuexiao").val()==""){
+		alert('	所在学校');
+		return false;
+	}
+	
+	if($("#zaidukecheng").val()==""){
+		alert('	在读课程');
+		return false;
+	}
+	
+	if($("#suozainianji").val()==""){
+		alert('所在年级');
+		return false;
+	}
+	if($("#lxrname").val()==""){
+		alert('联系人姓名');
+		return false;
+	}
+	
+	if($("#lxrgx").val()==""){
+		alert('联系人的关系');
+		return false;
+	}
+	if($("#lxrphone").val()==""){
+		alert('联系人电话');
+		return false;
+	}
+	if($("#email").val()==""){
+		alert('联系人邮箱');
+		return false;
+	}
+	
+	value=$("#body").val();
+	if(!dyfrom_maxa(value, 500)){
+		alert('内容不能大于500个字符');
+		return false;
+	}
+	return true;
+}
+</script>
+           <form action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=24" class="contact-form" method="post">
+                  <table width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+  <tr>
+    <td width="50%">姓名Name of Student（汉字）*</td>
+    <td width="50%" height="40">性别 Gender*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="title" id="title" placeholder="您的姓名"></td>
+    <td height="40"><label><input name="xingbie" type="radio" id="xingbie" value="值1">&nbsp;男</label>&nbsp;
+                                 <label><input name="xingbie" type="radio" id="xingbie"  value="值2">&nbsp;女</label></td>
+  </tr>
+ 
+  
+
+ 
+  <tr>
+    <td height="40">出生日期 （DD/ MM / YYYY）Date&nbsp;of&nbsp;Birth*</td>
+    <td height="40">国籍Nationality*</td>
+  </tr>
+  <tr>
+    <td><input class="minp l" id="shengri" name="shengri"  type="text" placeholder="出生日期"></td>
+    <td height="40"><input type="text" class="minp l" name="guoji2" id="guoji2" placeholder="国籍" /></td>
+  </tr>
+ 
+ 
+  <tr>
+    <td height="40" colspan="2">所在学校 Current School*</td>
+    </tr>
+  <tr>
+    <td height="40" colspan="2"><input type="text" class="minp l" name="suozaixuexiao" id="suozaixuexiao" placeholder="所在学校" style="width:97.5%"/></td>
+    </tr>
+  <tr>
+    <td height="40">在读课程 Course&nbsp;of&nbsp;study*</td>
+    <td height="40">所在年级Grade*</td>
+  </tr>
+  <tr>
+    <td height="40"> <label><input name="zaidukecheng" type="radio" id="zaidukecheng"  value="值1">&nbsp;国内课程 </label>&nbsp;
+                                <label><input name="zaidukecheng" type="radio" id="zaidukecheng" value="值2">&nbsp;国际课程</label>&nbsp;</td>
+    <td height="40"><label><input name="suozainianji" type="radio" id="suozainianji" value="值1">&nbsp;8</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji"  value="值2">&nbsp;9</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji"  value="值3">&nbsp;10</label>&nbsp;
+                                <label><input name="suozainianji" type="radio" id="suozainianji" value="值4">&nbsp;11</label></td>
+  </tr>
+  
+    <tr>
+    <td>联系人姓名 Contact Person*</td>
+    <td height="40">联系人电话 Phone Number*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="lxrname" id="lxrname" placeholder="联系人姓名"></td>
+    <td height="40"><input type="text" class="minp l" name="lxrphone" id="lxrphone2" placeholder="联系人电话" /></td>
+  </tr>
+   <tr>
+    <td>与联系人关系 Relationship*</td>
+    <td height="40">联系人邮箱 Email*</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="minp l" name="lxrgx" id="lxrgx" placeholder="与联系人关系"></td>
+    <td height="40"><input type="text" class="minp l" name="email" id="email2" placeholder="联系人邮箱" /></td>
+  </tr>
+  <tr>
+    <td height="40" colspan="2"><input type="submit" value="提交您的信息" class="sub" ></td>
+    </tr>
+</table>
+ 
+              </form>
+        </div>
+    </div>
+</div>
+<div class="map">
+    <div class="map-s">
+        <a href="javascript:void(0);" class="btn"><em></em>点击展开地图</a>
+    </div>
+    <div class="map-pop">
+        <a href="javascript:void(0);" class="btn-down"></a>
+        <div class="map-bg1"></div>
+        <div class="map-bg2"></div>
+        <div id="map" class="map-i" style="width:100%; height: 100%;">
+        </div>
+    </div>
+</div>
+</div>
+
+{include="foot.html"}

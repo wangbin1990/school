@@ -1,0 +1,49 @@
+{include="head.html"}
+<div id="bd">
+  <div id="ban-in" style="background-image:url({$GLOBALS['TURL']}images/14415956833641.jpg)">
+    <div class="miaoshu"><div class="name"></div></div>
+    <div class="ban-bg"></div>
+  </div>
+  <div class="c"></div>
+  <div class="wp" id="whous">
+    <div class="tit-i">
+        <h3>课程介绍</h3>
+        <h5>Course <span>introduction</span></h5>
+    </div>
+    <div class="c"></div>
+    <div class="sub-nav">
+    <ul>
+    {loop table="classtype" pid="3" mshow="1"}
+        <li ><a href="{$v['url']}">{$v['classname']}</a></li>
+    {/loop}    
+    </ul>
+   </div>
+    <div class="about-info" style="text-align:left">{$type['body']}</div>
+  <!--<ul class="ul-case">
+    {foreach $lists as $v}
+     <li>
+        <div class="block">
+            <div class="pic"><img src="{$v['litpic']}"></div>
+            <div class="txt">
+                <a href="{$v['url']}" style="width:100%;height:100%;display:block;">
+                    <b></b>
+                    <div class="pad">
+                        <h5>{$v['classname']}</h5>
+                        <em></em>
+                        <h3>{fun newstr($v['title'],40)}</h3>
+                        <span class="more">课程详情</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </li>
+   {/foreach} 
+  </ul>-->
+  <div class="c"></div>
+<div class="wp">
+    <ul class="pages">
+        {$pages}
+    </ul>
+</div>
+</div>        
+{include="foot.html"}
